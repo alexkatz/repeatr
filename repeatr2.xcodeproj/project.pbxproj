@@ -11,6 +11,7 @@
 		5663F4D0201D135F0061DC86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CF201D135F0061DC86 /* HomeViewController.swift */; };
 		5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D4201D135F0061DC86 /* Assets.xcassets */; };
 		5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */; };
+		566A7FCF202151640027ABC1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A7FCE202151640027ABC1 /* Error.swift */; };
 		8DDDB6C1D1E3F8CF99606DBA /* Pods_repeatr2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6BC466E7F686CBAC9B931A /* Pods_repeatr2.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		5663F4D4201D135F0061DC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5663F4D7201D135F0061DC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5663F4D9201D135F0061DC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566A7FCE202151640027ABC1 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		7D5B2FB80F09733E46E94D3D /* Pods-repeatr2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.release.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.release.xcconfig"; sourceTree = "<group>"; };
 		8E6BC466E7F686CBAC9B931A /* Pods_repeatr2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_repeatr2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				5663F4D4201D135F0061DC86 /* Assets.xcassets */,
 				5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */,
 				5663F4D9201D135F0061DC86 /* Info.plist */,
+				566A7FCE202151640027ABC1 /* Error.swift */,
 			);
 			path = repeatr2;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5663F4D0201D135F0061DC86 /* HomeViewController.swift in Sources */,
+				566A7FCF202151640027ABC1 /* Error.swift in Sources */,
 				5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
