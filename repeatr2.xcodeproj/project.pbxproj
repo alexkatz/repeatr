@@ -12,6 +12,12 @@
 		5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D4201D135F0061DC86 /* Assets.xcassets */; };
 		5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */; };
 		566A7FCF202151640027ABC1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A7FCE202151640027ABC1 /* Error.swift */; };
+		566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F5C8F21508AA900B40EE9 /* LoopPoint.swift */; };
+		56F4B5A12151CD0C002148A4 /* Disablable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A02151CD0C002148A4 /* Disablable.swift */; };
+		56F4B5A42151CD5D002148A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A32151CD5D002148A4 /* Constants.swift */; };
+		56F4B5A72151CDA7002148A4 /* ControlLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */; };
+		56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A82151CDEB002148A4 /* RecordView.swift */; };
+		56F4B5AB2151CE10002148A4 /* RecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */; };
 		8DDDB6C1D1E3F8CF99606DBA /* Pods_repeatr2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6BC466E7F686CBAC9B931A /* Pods_repeatr2.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +30,12 @@
 		5663F4D7201D135F0061DC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5663F4D9201D135F0061DC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566A7FCE202151640027ABC1 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		566F5C8F21508AA900B40EE9 /* LoopPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopPoint.swift; sourceTree = "<group>"; };
+		56F4B5A02151CD0C002148A4 /* Disablable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disablable.swift; sourceTree = "<group>"; };
+		56F4B5A32151CD5D002148A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLabelView.swift; sourceTree = "<group>"; };
+		56F4B5A82151CDEB002148A4 /* RecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDelegate.swift; sourceTree = "<group>"; };
 		7D5B2FB80F09733E46E94D3D /* Pods-repeatr2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.release.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.release.xcconfig"; sourceTree = "<group>"; };
 		8E6BC466E7F686CBAC9B931A /* Pods_repeatr2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_repeatr2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,14 +81,60 @@
 		5663F4CC201D135F0061DC86 /* repeatr2 */ = {
 			isa = PBXGroup;
 			children = (
+				56F4B5A52151CD9C002148A4 /* Views */,
+				56F4B5A22151CD56002148A4 /* Shared */,
+				56F4B59F2151CD02002148A4 /* Delegates */,
+				566F5C8E2150893600B40EE9 /* ViewControllers */,
+				566F5C8B215088D800B40EE9 /* Models */,
 				5663F4CD201D135F0061DC86 /* AppDelegate.swift */,
-				5663F4CF201D135F0061DC86 /* HomeViewController.swift */,
 				5663F4D4201D135F0061DC86 /* Assets.xcassets */,
 				5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */,
 				5663F4D9201D135F0061DC86 /* Info.plist */,
 				566A7FCE202151640027ABC1 /* Error.swift */,
 			);
 			path = repeatr2;
+			sourceTree = "<group>";
+		};
+		566F5C8B215088D800B40EE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				566F5C8F21508AA900B40EE9 /* LoopPoint.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		566F5C8E2150893600B40EE9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5663F4CF201D135F0061DC86 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		56F4B59F2151CD02002148A4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */,
+				56F4B5A02151CD0C002148A4 /* Disablable.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		56F4B5A22151CD56002148A4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				56F4B5A32151CD5D002148A4 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		56F4B5A52151CD9C002148A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */,
+				56F4B5A82151CDEB002148A4 /* RecordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C47FF8962DB31F22117FE46A /* Pods */ = {
@@ -100,7 +158,6 @@
 				5663F4C7201D135F0061DC86 /* Frameworks */,
 				5663F4C8201D135F0061DC86 /* Resources */,
 				4BC17A85B1E0E9595A19C6A8 /* [CP] Embed Pods Frameworks */,
-				AE209EECD4DCB8B3DE141B45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -118,11 +175,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Alex Katz";
 				TargetAttributes = {
 					5663F4C9201D135F0061DC86 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -176,21 +234,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE209EECD4DCB8B3DE141B45 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C1B8BD157A8440042872A443 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,9 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F4B5A12151CD0C002148A4 /* Disablable.swift in Sources */,
 				5663F4D0201D135F0061DC86 /* HomeViewController.swift in Sources */,
 				566A7FCF202151640027ABC1 /* Error.swift in Sources */,
+				56F4B5A72151CDA7002148A4 /* ControlLabelView.swift in Sources */,
 				5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */,
+				56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */,
+				566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */,
+				56F4B5A42151CD5D002148A4 /* Constants.swift in Sources */,
+				56F4B5AB2151CE10002148A4 /* RecordDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +299,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -257,6 +307,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -307,6 +358,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -314,6 +366,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -354,7 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alexkatz.repeatr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -370,7 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alexkatz.repeatr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
