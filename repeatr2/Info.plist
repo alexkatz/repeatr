@@ -39,5 +39,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Repeatr would like to record audio on your command, allowing you to create cool samples and multitrack loops.</string>
 </dict>
 </plist>

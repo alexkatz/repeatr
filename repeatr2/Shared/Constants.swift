@@ -11,7 +11,7 @@ class Constants {
   static let dimAlpha = CGFloat(0.6)
   static let dimmerAlpha = CGFloat(0.3)
   
-  static let recordButtonHeight = CGFloat(44)
+  static let bottomButtonsHeight = CGFloat(44)
   
   static let cellHeight = CGFloat(44 * 4)
   

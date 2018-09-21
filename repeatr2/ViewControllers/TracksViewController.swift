@@ -2,13 +2,14 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-class HomeViewController: UIViewController {
+class TracksViewController: UIViewController {
   var collectionView: UICollectionView!
+  var welcomeLabel: UILabel!
   var bottomContainerView: UIView!
-  var recordView: UIView!
-  var loopView: UIView!
-  var muteView: UIView!
-  var moreView: UIView!
+  var recordView: RecordView!
+  var loopRecordView: LoopRecordView!
+  var muteAllView: MuteAllView!
+  var moreView: MoreOptionsView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,11 +34,10 @@ class HomeViewController: UIViewController {
       make.bottom.equalToSuperview()
       make.left.equalToSuperview()
       make.right.equalToSuperview()
-      make.top.equalTo(view.layoutMarginsGuide.snp.bottom).offset(-44)
+      make.top.equalTo(view.layoutMarginsGuide.snp.bottom).offset(-Constants.bottomButtonsHeight)
     }
     
-    recordView = UIView(frame: CGRect.zero)
-    recordView.backgroundColor = Constants.darkerRedColor
+    recordView = RecordView(bottomMargin: view.layoutMargins.bottom)
     bottomContainerView.addSubview(recordView)
     recordView.snp.makeConstraints { make in
       make.width.equalToSuperview().multipliedBy(0.25)
@@ -46,34 +46,46 @@ class HomeViewController: UIViewController {
       make.left.equalToSuperview()
     }
     
-    loopView = UIView(frame: CGRect.zero)
-    loopView.backgroundColor = Constants.redColor
-    bottomContainerView.addSubview(loopView)
-    loopView.snp.makeConstraints { make in
+    loopRecordView = LoopRecordView(bottomMargin: view.layoutMargins.bottom)
+    loopRecordView.backgroundColor = Constants.redColor
+    bottomContainerView.addSubview(loopRecordView)
+    loopRecordView.snp.makeConstraints { make in
       make.size.equalTo(recordView.snp.size)
       make.top.equalToSuperview()
       make.left.equalTo(recordView.snp.right)
     }
     
-    muteView = UIView(frame: CGRect.zero)
-    muteView.backgroundColor = UIColor.orange
-    bottomContainerView.addSubview(muteView)
-    muteView.snp.makeConstraints { make in
+    muteAllView = MuteAllView(bottomMargin: view.layoutMargins.bottom)
+    bottomContainerView.addSubview(muteAllView)
+    muteAllView.snp.makeConstraints { make in
       make.size.equalTo(recordView.snp.size)
       make.top.equalToSuperview()
-      make.left.equalTo(loopView.snp.right)
+      make.left.equalTo(loopRecordView.snp.right)
     }
     
-    moreView = UIView(frame: CGRect.zero)
-    moreView.backgroundColor = UIColor.green
+    moreView = MoreOptionsView(bottomMargin: view.layoutMargins.bottom)
     bottomContainerView.addSubview(moreView)
     moreView.snp.makeConstraints { make in
       make.size.equalTo(recordView.snp.size)
       make.top.equalToSuperview()
-      make.left.equalTo(muteView.snp.right)
+      make.left.equalTo(muteAllView.snp.right)
     }
     
+    let layoutBounds = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - view.layoutMargins.bottom - Constants.bottomButtonsHeight)
+    let layout = TracksCollectionViewLayout(bounds: layoutBounds)
+    collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+    collectionView.alwaysBounceVertical = true
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    view.addSubview(collectionView)
+    collectionView.snp.makeConstraints { make in
+      make.top.equalToSuperview()
+      make.left.equalToSuperview()
+      make.right.equalToSuperview()
+      make.bottom.equalTo(bottomContainerView.snp.top)
+    }
     
+    welcomeLabel = UILabel(frame: CGRect.zero) // TODO: finish this up!
   }
   
   override func viewDidAppear(_ animated: Bool) {

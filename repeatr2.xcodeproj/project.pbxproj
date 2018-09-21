@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5657E6FD21545A1D00994A49 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FC21545A1D00994A49 /* TrackService.swift */; };
+		5657E70021545EDF00994A49 /* LoopRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FF21545EDF00994A49 /* LoopRecordView.swift */; };
+		5657E70221545F2100994A49 /* LoopRecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70121545F2100994A49 /* LoopRecordDelegate.swift */; };
+		5657E7042154625F00994A49 /* MuteAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7032154625F00994A49 /* MuteAllView.swift */; };
+		5657E7062154628E00994A49 /* LoopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7052154628E00994A49 /* LoopService.swift */; };
+		5657E7082154687200994A49 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7072154687200994A49 /* MoreOptionsView.swift */; };
+		5657E70A2154689800994A49 /* TrackSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7092154689800994A49 /* TrackSelectorDelegate.swift */; };
+		5657E70C215489B800994A49 /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70B215489B800994A49 /* TrackCollectionViewCell.swift */; };
+		5657E70F21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70E21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift */; };
+		5657E71121549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71021549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift */; };
+		5657E71321549AB700994A49 /* WaveformCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71221549AB700994A49 /* WaveformCollectionViewLayout.swift */; };
+		5657E71521549C4200994A49 /* TracksCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */; };
+		5657E71721549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */; };
+		5657E71921549E5A00994A49 /* LoopRecordViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */; };
 		5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CD201D135F0061DC86 /* AppDelegate.swift */; };
-		5663F4D0201D135F0061DC86 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CF201D135F0061DC86 /* HomeViewController.swift */; };
+		5663F4D0201D135F0061DC86 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CF201D135F0061DC86 /* TracksViewController.swift */; };
 		5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D4201D135F0061DC86 /* Assets.xcassets */; };
 		5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */; };
 		566A7FCF202151640027ABC1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A7FCE202151640027ABC1 /* Error.swift */; };
 		566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F5C8F21508AA900B40EE9 /* LoopPoint.swift */; };
 		56F4B5A12151CD0C002148A4 /* Disablable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A02151CD0C002148A4 /* Disablable.swift */; };
 		56F4B5A42151CD5D002148A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A32151CD5D002148A4 /* Constants.swift */; };
-		56F4B5A72151CDA7002148A4 /* ControlLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */; };
+		56F4B5A72151CDA7002148A4 /* BottomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A62151CDA7002148A4 /* BottomControlView.swift */; };
 		56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5A82151CDEB002148A4 /* RecordView.swift */; };
 		56F4B5AB2151CE10002148A4 /* RecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */; };
 		8DDDB6C1D1E3F8CF99606DBA /* Pods_repeatr2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6BC466E7F686CBAC9B931A /* Pods_repeatr2.framework */; };
@@ -23,9 +37,23 @@
 
 /* Begin PBXFileReference section */
 		0E8E80ACFD8CCE49F5BFC613 /* Pods-repeatr2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.debug.xcconfig"; sourceTree = "<group>"; };
+		5657E6FC21545A1D00994A49 /* TrackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
+		5657E6FF21545EDF00994A49 /* LoopRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordView.swift; sourceTree = "<group>"; };
+		5657E70121545F2100994A49 /* LoopRecordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordDelegate.swift; sourceTree = "<group>"; };
+		5657E7032154625F00994A49 /* MuteAllView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuteAllView.swift; sourceTree = "<group>"; };
+		5657E7052154628E00994A49 /* LoopService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopService.swift; sourceTree = "<group>"; };
+		5657E7072154687200994A49 /* MoreOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
+		5657E7092154689800994A49 /* TrackSelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSelectorDelegate.swift; sourceTree = "<group>"; };
+		5657E70B215489B800994A49 /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		5657E70E21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TracksViewController+UICollectionViewSource.swift"; sourceTree = "<group>"; };
+		5657E71021549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TracksViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		5657E71221549AB700994A49 /* WaveformCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformCollectionViewLayout.swift; sourceTree = "<group>"; };
+		5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksCollectionViewLayout.swift; sourceTree = "<group>"; };
+		5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TracksViewController+LoopRecordViewDelegate.swift"; sourceTree = "<group>"; };
+		5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordViewDelegate.swift; sourceTree = "<group>"; };
 		5663F4CA201D135F0061DC86 /* repeatr2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = repeatr2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5663F4CD201D135F0061DC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5663F4CF201D135F0061DC86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5663F4CF201D135F0061DC86 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
 		5663F4D4201D135F0061DC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5663F4D7201D135F0061DC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5663F4D9201D135F0061DC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,7 +61,7 @@
 		566F5C8F21508AA900B40EE9 /* LoopPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopPoint.swift; sourceTree = "<group>"; };
 		56F4B5A02151CD0C002148A4 /* Disablable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disablable.swift; sourceTree = "<group>"; };
 		56F4B5A32151CD5D002148A4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLabelView.swift; sourceTree = "<group>"; };
+		56F4B5A62151CDA7002148A4 /* BottomControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomControlView.swift; sourceTree = "<group>"; };
 		56F4B5A82151CDEB002148A4 /* RecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDelegate.swift; sourceTree = "<group>"; };
 		7D5B2FB80F09733E46E94D3D /* Pods-repeatr2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.release.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +88,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		563778DC2152664E002C9086 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5657E70B215489B800994A49 /* TrackCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5657E6FE21545A3D00994A49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5657E6FC21545A1D00994A49 /* TrackService.swift */,
+				5657E7052154628E00994A49 /* LoopService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5657E70D21548C6E00994A49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5657E70E21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift */,
+				5657E71021549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift */,
+				5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5663F4C1201D135F0061DC86 = {
 			isa = PBXGroup;
 			children = (
@@ -81,16 +136,19 @@
 		5663F4CC201D135F0061DC86 /* repeatr2 */ = {
 			isa = PBXGroup;
 			children = (
-				56F4B5A52151CD9C002148A4 /* Views */,
-				56F4B5A22151CD56002148A4 /* Shared */,
-				56F4B59F2151CD02002148A4 /* Delegates */,
-				566F5C8E2150893600B40EE9 /* ViewControllers */,
-				566F5C8B215088D800B40EE9 /* Models */,
 				5663F4CD201D135F0061DC86 /* AppDelegate.swift */,
 				5663F4D4201D135F0061DC86 /* Assets.xcassets */,
-				5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */,
-				5663F4D9201D135F0061DC86 /* Info.plist */,
+				563778DC2152664E002C9086 /* Cells */,
+				56F4B59F2151CD02002148A4 /* Delegates */,
 				566A7FCE202151640027ABC1 /* Error.swift */,
+				5657E70D21548C6E00994A49 /* Extensions */,
+				5663F4D9201D135F0061DC86 /* Info.plist */,
+				5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */,
+				566F5C8B215088D800B40EE9 /* Models */,
+				5657E6FE21545A3D00994A49 /* Services */,
+				56F4B5A22151CD56002148A4 /* Shared */,
+				566F5C8E2150893600B40EE9 /* ViewControllers */,
+				56F4B5A52151CD9C002148A4 /* Views */,
 			);
 			path = repeatr2;
 			sourceTree = "<group>";
@@ -106,7 +164,7 @@
 		566F5C8E2150893600B40EE9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5663F4CF201D135F0061DC86 /* HomeViewController.swift */,
+				5663F4CF201D135F0061DC86 /* TracksViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,8 +172,11 @@
 		56F4B59F2151CD02002148A4 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				5657E7092154689800994A49 /* TrackSelectorDelegate.swift */,
 				56F4B5AA2151CE10002148A4 /* RecordDelegate.swift */,
 				56F4B5A02151CD0C002148A4 /* Disablable.swift */,
+				5657E70121545F2100994A49 /* LoopRecordDelegate.swift */,
+				5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -123,6 +184,8 @@
 		56F4B5A22151CD56002148A4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5657E71221549AB700994A49 /* WaveformCollectionViewLayout.swift */,
+				5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */,
 				56F4B5A32151CD5D002148A4 /* Constants.swift */,
 			);
 			path = Shared;
@@ -131,8 +194,11 @@
 		56F4B5A52151CD9C002148A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56F4B5A62151CDA7002148A4 /* ControlLabelView.swift */,
+				5657E7072154687200994A49 /* MoreOptionsView.swift */,
+				5657E7032154625F00994A49 /* MuteAllView.swift */,
+				56F4B5A62151CDA7002148A4 /* BottomControlView.swift */,
 				56F4B5A82151CDEB002148A4 /* RecordView.swift */,
+				5657E6FF21545EDF00994A49 /* LoopRecordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,15 +325,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5657E70C215489B800994A49 /* TrackCollectionViewCell.swift in Sources */,
+				5657E71321549AB700994A49 /* WaveformCollectionViewLayout.swift in Sources */,
 				56F4B5A12151CD0C002148A4 /* Disablable.swift in Sources */,
-				5663F4D0201D135F0061DC86 /* HomeViewController.swift in Sources */,
+				5657E71721549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift in Sources */,
+				5657E70F21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift in Sources */,
+				5663F4D0201D135F0061DC86 /* TracksViewController.swift in Sources */,
 				566A7FCF202151640027ABC1 /* Error.swift in Sources */,
-				56F4B5A72151CDA7002148A4 /* ControlLabelView.swift in Sources */,
+				56F4B5A72151CDA7002148A4 /* BottomControlView.swift in Sources */,
 				5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */,
+				5657E7082154687200994A49 /* MoreOptionsView.swift in Sources */,
 				56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */,
+				5657E70A2154689800994A49 /* TrackSelectorDelegate.swift in Sources */,
 				566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */,
+				5657E71521549C4200994A49 /* TracksCollectionViewLayout.swift in Sources */,
+				5657E71921549E5A00994A49 /* LoopRecordViewDelegate.swift in Sources */,
+				5657E7062154628E00994A49 /* LoopService.swift in Sources */,
 				56F4B5A42151CD5D002148A4 /* Constants.swift in Sources */,
+				5657E7042154625F00994A49 /* MuteAllView.swift in Sources */,
 				56F4B5AB2151CE10002148A4 /* RecordDelegate.swift in Sources */,
+				5657E6FD21545A1D00994A49 /* TrackService.swift in Sources */,
+				5657E71121549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift in Sources */,
+				5657E70021545EDF00994A49 /* LoopRecordView.swift in Sources */,
+				5657E70221545F2100994A49 /* LoopRecordDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
