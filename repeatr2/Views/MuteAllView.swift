@@ -1,7 +1,7 @@
 import UIKit
 
 class MuteAllView: BottomControlView {
-  let loopService = LoopService.sharedInstance
+  let loopService = Looper.sharedInstance
   let muteAllText = "MUTE ALL"
   let unmuteAllText = "UNMUTE ALL"
   

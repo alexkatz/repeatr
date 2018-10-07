@@ -18,6 +18,6 @@ class RecordView: BottomControlView, RecordDelegate {
   override func setup() {
     super.setup()
     label.text = "RECORD"
-    label.textColor = Constants.redColor
+    label.textColor = UIColor.Theme.red
   }
 }

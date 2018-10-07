@@ -1,6 +1,6 @@
 import Foundation
 
-class TrackService: NSObject {
+class Track: NSObject {
   var isLoopRecording = false
   var isArmedForLoopRecord = false
   var isMuted = false

@@ -11,6 +11,13 @@ class TracksViewController: UIViewController {
   var muteAllView: MuteAllView!
   var moreView: MoreOptionsView!
   
+  var tracks = [Track]()
+  var shouldAddTrackOnDidEndDecelerating = false
+  
+  var visibleCells: [TrackCollectionViewCell] {
+    return collectionView.visibleCells.map({ cell in cell as! TrackCollectionViewCell })
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -20,7 +27,6 @@ class TracksViewController: UIViewController {
       try audioSession.setCategory(AVAudioSession.Category(rawValue: AVAudioSession.Category.playAndRecord.rawValue), mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
       try audioSession.setPreferredIOBufferDuration(0.001)
       try audioSession.setActive(true)
-      throw AudioError.AudioEngineError
     } catch AudioError.AudioEngineError {
       handleError(errorMessage: errorMessage)
     } catch let error as NSError {
@@ -47,7 +53,7 @@ class TracksViewController: UIViewController {
     }
     
     loopRecordView = LoopRecordView(bottomMargin: view.layoutMargins.bottom)
-    loopRecordView.backgroundColor = Constants.redColor
+    loopRecordView.backgroundColor = UIColor.Theme.red
     bottomContainerView.addSubview(loopRecordView)
     loopRecordView.snp.makeConstraints { make in
       make.size.equalTo(recordView.snp.size)
@@ -74,6 +80,7 @@ class TracksViewController: UIViewController {
     let layoutBounds = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - view.layoutMargins.bottom - Constants.bottomButtonsHeight)
     let layout = TracksCollectionViewLayout(bounds: layoutBounds)
     collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+    collectionView.register(TrackCollectionViewCell.self, forCellWithReuseIdentifier: TrackCollectionViewCell.identifier)
     collectionView.alwaysBounceVertical = true
     collectionView.dataSource = self
     collectionView.delegate = self
@@ -85,7 +92,15 @@ class TracksViewController: UIViewController {
       make.bottom.equalTo(bottomContainerView.snp.top)
     }
     
-    welcomeLabel = UILabel(frame: CGRect.zero) // TODO: finish this up!
+    welcomeLabel = UILabel(frame: CGRect.zero)
+    welcomeLabel.font = UIFont.hindMaduraiLight(ofSize: UIFont.Size.thirteen)
+    welcomeLabel.textAlignment = .center
+    welcomeLabel.textColor = UIColor.Theme.white
+    welcomeLabel.text = "Swipe down to create a new track."
+    view.addSubview(welcomeLabel)
+    welcomeLabel.snp.makeConstraints { make in
+      make.center.equalTo(collectionView.snp.center)
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -100,6 +115,25 @@ class TracksViewController: UIViewController {
     let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
     alertController.addAction(UIAlertAction(title: "OK", style: .default))
     present(alertController, animated: true)
+  }
+  
+  func createTrack() {
+    let newTrack = Track()
+    collectionView.performBatchUpdates({
+      tracks.insert(newTrack, at: 0)
+      collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
+    }, completion: { finished in
+      if finished {
+        for cell in self.visibleCells {
+          if cell.track == self.tracks.first {
+            UIView.animate(withDuration: 0.35, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
+//              self.selectCell(cell)
+            }, completion: nil)
+            break
+          }
+        }
+      }
+    })
   }
 }
 

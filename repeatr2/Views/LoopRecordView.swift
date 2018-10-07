@@ -24,12 +24,12 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
   override func setup() {
     super.setup()
     label.text = loopText
-    backgroundColor = Constants.redColor
+    backgroundColor = UIColor.Theme.red
   }
   
   @objc func toggleRed() {
     isLabelWhite = !isLabelWhite
-    label.textColor = isLabelWhite ? Constants.whiteColor : Constants.blackColor
+    label.textColor = isLabelWhite ? UIColor.Theme.white : UIColor.Theme.black
   }
   
   func didChangeIsArmed(_ isArmed: Bool) {
@@ -39,11 +39,11 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
   func didChangeIsLoopRecording(_ isLoopRecording: Bool) {
     if isLoopRecording {
       armedTimer?.invalidate()
-      label.textColor = Constants.blackColor
+      label.textColor = UIColor.Theme.black
       isLabelWhite = false
     } else {
-      label.textColor = Constants.whiteColor
-      backgroundColor = Constants.redColor
+      label.textColor = UIColor.Theme.white
+      backgroundColor = UIColor.Theme.red
       isLabelWhite = true
       setArmed(false)
     }
@@ -51,15 +51,15 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
   
   func setArmed(_ armed: Bool) {
     if armed {
-      label.textColor = Constants.blackColor
-      backgroundColor = Constants.redColor
+      label.textColor = UIColor.Theme.black
+      backgroundColor = UIColor.Theme.red
       isLabelWhite = false
       let interval = 0.35
       armedTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(LoopRecordView.toggleRed), userInfo: nil, repeats: true)
       armedTimer?.tolerance = interval * 0.10
     } else {
       armedTimer?.invalidate()
-      label.textColor = Constants.whiteColor
+      label.textColor = UIColor.Theme.white
       isLabelWhite = true
     }
   }

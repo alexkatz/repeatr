@@ -1,7 +1,7 @@
 import UIKit
 
 class BottomControlView: UIView, Disablable {
-  var trackService: TrackService?
+  var trackService: Track?
   
   var enabled = false {
     didSet {
@@ -21,8 +21,8 @@ class BottomControlView: UIView, Disablable {
 
   func setup() {
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = Constants.font
-    label.textColor = UIColor.white
+    label.font = UIFont.hindMaduraiLight(ofSize: UIFont.Size.thirteen)
+    label.textColor = UIColor.Theme.white
     label.textAlignment = .center
     addSubview(label)
     label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

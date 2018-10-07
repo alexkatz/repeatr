@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5657E6FD21545A1D00994A49 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FC21545A1D00994A49 /* TrackService.swift */; };
+		5657E6FD21545A1D00994A49 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FC21545A1D00994A49 /* Track.swift */; };
 		5657E70021545EDF00994A49 /* LoopRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FF21545EDF00994A49 /* LoopRecordView.swift */; };
 		5657E70221545F2100994A49 /* LoopRecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70121545F2100994A49 /* LoopRecordDelegate.swift */; };
 		5657E7042154625F00994A49 /* MuteAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7032154625F00994A49 /* MuteAllView.swift */; };
-		5657E7062154628E00994A49 /* LoopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7052154628E00994A49 /* LoopService.swift */; };
+		5657E7062154628E00994A49 /* Looper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7052154628E00994A49 /* Looper.swift */; };
 		5657E7082154687200994A49 /* MoreOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7072154687200994A49 /* MoreOptionsView.swift */; };
 		5657E70A2154689800994A49 /* TrackSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E7092154689800994A49 /* TrackSelectorDelegate.swift */; };
 		5657E70C215489B800994A49 /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70B215489B800994A49 /* TrackCollectionViewCell.swift */; };
@@ -21,6 +21,10 @@
 		5657E71521549C4200994A49 /* TracksCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */; };
 		5657E71721549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */; };
 		5657E71921549E5A00994A49 /* LoopRecordViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */; };
+		5659F7802155ED97002FD653 /* HindMadurai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5659F77F2155ED97002FD653 /* HindMadurai-Light.ttf */; };
+		5659F7832155EE0D002FD653 /* UIFont+HindMadurai.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659F7822155EE0D002FD653 /* UIFont+HindMadurai.swift */; };
+		5659F7852155EF57002FD653 /* UIFont+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659F7842155EF57002FD653 /* UIFont+Size.swift */; };
+		5659F7872155F035002FD653 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659F7862155F035002FD653 /* UIColor+Theme.swift */; };
 		5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CD201D135F0061DC86 /* AppDelegate.swift */; };
 		5663F4D0201D135F0061DC86 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5663F4CF201D135F0061DC86 /* TracksViewController.swift */; };
 		5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D4201D135F0061DC86 /* Assets.xcassets */; };
@@ -37,11 +41,11 @@
 
 /* Begin PBXFileReference section */
 		0E8E80ACFD8CCE49F5BFC613 /* Pods-repeatr2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.debug.xcconfig"; sourceTree = "<group>"; };
-		5657E6FC21545A1D00994A49 /* TrackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
+		5657E6FC21545A1D00994A49 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		5657E6FF21545EDF00994A49 /* LoopRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordView.swift; sourceTree = "<group>"; };
 		5657E70121545F2100994A49 /* LoopRecordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordDelegate.swift; sourceTree = "<group>"; };
 		5657E7032154625F00994A49 /* MuteAllView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuteAllView.swift; sourceTree = "<group>"; };
-		5657E7052154628E00994A49 /* LoopService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopService.swift; sourceTree = "<group>"; };
+		5657E7052154628E00994A49 /* Looper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Looper.swift; sourceTree = "<group>"; };
 		5657E7072154687200994A49 /* MoreOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreOptionsView.swift; sourceTree = "<group>"; };
 		5657E7092154689800994A49 /* TrackSelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSelectorDelegate.swift; sourceTree = "<group>"; };
 		5657E70B215489B800994A49 /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -51,6 +55,11 @@
 		5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksCollectionViewLayout.swift; sourceTree = "<group>"; };
 		5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TracksViewController+LoopRecordViewDelegate.swift"; sourceTree = "<group>"; };
 		5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordViewDelegate.swift; sourceTree = "<group>"; };
+		5659F77F2155ED97002FD653 /* HindMadurai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindMadurai-Light.ttf"; sourceTree = "<group>"; };
+		5659F7812155EDB6002FD653 /* HindMadurai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindMadurai-Regular.ttf"; sourceTree = "<group>"; };
+		5659F7822155EE0D002FD653 /* UIFont+HindMadurai.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+HindMadurai.swift"; sourceTree = "<group>"; };
+		5659F7842155EF57002FD653 /* UIFont+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Size.swift"; sourceTree = "<group>"; };
+		5659F7862155F035002FD653 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		5663F4CA201D135F0061DC86 /* repeatr2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = repeatr2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5663F4CD201D135F0061DC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5663F4CF201D135F0061DC86 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +108,8 @@
 		5657E6FE21545A3D00994A49 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5657E6FC21545A1D00994A49 /* TrackService.swift */,
-				5657E7052154628E00994A49 /* LoopService.swift */,
+				5657E6FC21545A1D00994A49 /* Track.swift */,
+				5657E7052154628E00994A49 /* Looper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -111,8 +120,20 @@
 				5657E70E21548C8A00994A49 /* TracksViewController+UICollectionViewSource.swift */,
 				5657E71021549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift */,
 				5657E71621549E4600994A49 /* TracksViewController+LoopRecordViewDelegate.swift */,
+				5659F7822155EE0D002FD653 /* UIFont+HindMadurai.swift */,
+				5659F7842155EF57002FD653 /* UIFont+Size.swift */,
+				5659F7862155F035002FD653 /* UIColor+Theme.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5659F77E2155A7EE002FD653 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5659F7812155EDB6002FD653 /* HindMadurai-Regular.ttf */,
+				5659F77F2155ED97002FD653 /* HindMadurai-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5663F4C1201D135F0061DC86 = {
@@ -140,8 +161,8 @@
 				5663F4D4201D135F0061DC86 /* Assets.xcassets */,
 				563778DC2152664E002C9086 /* Cells */,
 				56F4B59F2151CD02002148A4 /* Delegates */,
-				566A7FCE202151640027ABC1 /* Error.swift */,
 				5657E70D21548C6E00994A49 /* Extensions */,
+				5659F77E2155A7EE002FD653 /* Fonts */,
 				5663F4D9201D135F0061DC86 /* Info.plist */,
 				5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */,
 				566F5C8B215088D800B40EE9 /* Models */,
@@ -184,6 +205,7 @@
 		56F4B5A22151CD56002148A4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				566A7FCE202151640027ABC1 /* Error.swift */,
 				5657E71221549AB700994A49 /* WaveformCollectionViewLayout.swift */,
 				5657E71421549C4200994A49 /* TracksCollectionViewLayout.swift */,
 				56F4B5A32151CD5D002148A4 /* Constants.swift */,
@@ -275,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */,
+				5659F7802155ED97002FD653 /* HindMadurai-Light.ttf in Resources */,
 				5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,16 +358,19 @@
 				56F4B5A72151CDA7002148A4 /* BottomControlView.swift in Sources */,
 				5663F4CE201D135F0061DC86 /* AppDelegate.swift in Sources */,
 				5657E7082154687200994A49 /* MoreOptionsView.swift in Sources */,
+				5659F7852155EF57002FD653 /* UIFont+Size.swift in Sources */,
 				56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */,
 				5657E70A2154689800994A49 /* TrackSelectorDelegate.swift in Sources */,
 				566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */,
 				5657E71521549C4200994A49 /* TracksCollectionViewLayout.swift in Sources */,
 				5657E71921549E5A00994A49 /* LoopRecordViewDelegate.swift in Sources */,
-				5657E7062154628E00994A49 /* LoopService.swift in Sources */,
+				5657E7062154628E00994A49 /* Looper.swift in Sources */,
 				56F4B5A42151CD5D002148A4 /* Constants.swift in Sources */,
+				5659F7832155EE0D002FD653 /* UIFont+HindMadurai.swift in Sources */,
+				5659F7872155F035002FD653 /* UIColor+Theme.swift in Sources */,
 				5657E7042154625F00994A49 /* MuteAllView.swift in Sources */,
 				56F4B5AB2151CE10002148A4 /* RecordDelegate.swift in Sources */,
-				5657E6FD21545A1D00994A49 /* TrackService.swift in Sources */,
+				5657E6FD21545A1D00994A49 /* Track.swift in Sources */,
 				5657E71121549A0500994A49 /* TracksViewController+UICollectionViewDelegate.swift in Sources */,
 				5657E70021545EDF00994A49 /* LoopRecordView.swift in Sources */,
 				5657E70221545F2100994A49 /* LoopRecordDelegate.swift in Sources */,
