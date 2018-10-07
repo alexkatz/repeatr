@@ -14,12 +14,16 @@ extension TracksViewController: UICollectionViewDelegate {
     }
   }
   
+  // TODO: keep collection view at current offset, animate in new track, collapse collection view to new offset.. might require custom layout... fun!
+  
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     
     if scrollView.contentOffset.y < -100 {
       shouldAddTrackOnDidEndDecelerating = true
     }
   }
+  
+  // TODO: get rid of this, remove shouldAddTrackOnDidEndDecelerating entirely
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     if shouldAddTrackOnDidEndDecelerating {
