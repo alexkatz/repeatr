@@ -3,20 +3,30 @@ import SnapKit
 import AVFoundation
 
 class TracksViewController: UIViewController {
+  let addTrackOffsetDelta: CGFloat = 100
+  let impactGenerator = UIImpactFeedbackGenerator()
+  
+  var animator: UIViewPropertyAnimator!
   var collectionView: UICollectionView!
   var welcomeLabel: UILabel!
+  var createTrackLabel: UILabel!
   var bottomContainerView: UIView!
   var recordView: RecordView!
   var loopRecordView: LoopRecordView!
   var muteAllView: MuteAllView!
   var moreView: MoreOptionsView!
+  var addTrackIndicatorView: UIView!
   
   var tracks = [Track]()
-  var shouldAddTrackOnDidEndDecelerating = false
+  
+  var prevPulledDownRatio: CGFloat = 0
+  var currPulledDownRatio: CGFloat = 0
   
   var visibleCells: [TrackCollectionViewCell] {
     return collectionView.visibleCells.map({ cell in cell as! TrackCollectionViewCell })
   }
+  
+  override var prefersStatusBarHidden: Bool { return true }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,6 +42,9 @@ class TracksViewController: UIViewController {
     } catch let error as NSError {
       handleError(errorMessage: errorMessage, description: error.localizedDescription)
     }
+    
+    let timingParameters = UISpringTimingParameters(dampingRatio: 0.18, initialVelocity: CGVector(dx: 10, dy: 10))
+    animator = UIViewPropertyAnimator(duration: 0, timingParameters: timingParameters)
     
     bottomContainerView = UIView(frame: CGRect.zero)
     bottomContainerView.alpha = 0
@@ -101,6 +114,26 @@ class TracksViewController: UIViewController {
     welcomeLabel.snp.makeConstraints { make in
       make.center.equalTo(collectionView.snp.center)
     }
+    
+    addTrackIndicatorView = UIView(frame: CGRect.zero)
+    addTrackIndicatorView.backgroundColor = UIColor.Theme.green
+    view.addSubview(addTrackIndicatorView)
+    addTrackIndicatorView.snp.makeConstraints { make in
+      make.left.equalToSuperview()
+      make.right.equalToSuperview()
+      make.top.equalToSuperview()
+      make.height.equalTo(0)
+    }
+    
+    createTrackLabel = UILabel(frame: CGRect.zero)
+    createTrackLabel.font = UIFont.hindMaduraiRegular(ofSize: UIFont.Size.thirteen)
+    createTrackLabel.text = "CREATE TRACK"
+    createTrackLabel.textAlignment = .center
+    addTrackIndicatorView.addSubview(createTrackLabel)
+    createTrackLabel.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -118,6 +151,7 @@ class TracksViewController: UIViewController {
   }
   
   func createTrack() {
+    UIView.animate(withDuration: Constants.defaultAnimationDuration) { self.welcomeLabel.alpha = 0 }
     let newTrack = Track()
     collectionView.performBatchUpdates({
       tracks.insert(newTrack, at: 0)

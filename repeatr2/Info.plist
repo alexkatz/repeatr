@@ -41,6 +41,8 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>HindMadurai-Bold.ttf</string>
+		<string>HindMadurai-SemiBold.ttf</string>
 		<string>HindMadurai-Light.ttf</string>
 		<string>HindMadurai-Regular.ttf</string>
 	</array>

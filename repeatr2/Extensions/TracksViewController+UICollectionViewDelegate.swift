@@ -9,26 +9,31 @@ extension TracksViewController: UICollectionViewDelegate {
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let yOffset = scrollView.contentOffset.y
-    if yOffset < 0 {
-      // center the text or whatever here, transform it with spring animation or something funky and kewl dawg
+    let topInset = view.safeAreaInsets.top
+    currPulledDownRatio = (-yOffset - topInset) / (topInset + addTrackOffsetDelta)
+    
+    addTrackIndicatorView.snp.updateConstraints { make in
+      make.height.equalTo(currPulledDownRatio > 0 ? -yOffset : 0)
     }
+    
+    addTrackIndicatorView.alpha = currPulledDownRatio
+    createTrackLabel.alpha = currPulledDownRatio - 0.5
+    
+    if currPulledDownRatio >= 1 && prevPulledDownRatio < 1 {
+      impactGenerator.impactOccurred()
+      animator.addAnimations { self.createTrackLabel.transform = CGAffineTransform(scaleX: 1.25, y: 1.25) }
+      animator.addAnimations({ self.createTrackLabel.transform = CGAffineTransform(scaleX: 1.0, y: 1.0) }, delayFactor: 0.2)
+      animator.startAnimation()
+    }
+    
+    prevPulledDownRatio = currPulledDownRatio
+    
+    view.layoutIfNeeded()
   }
-  
-  // TODO: keep collection view at current offset, animate in new track, collapse collection view to new offset.. might require custom layout... fun!
   
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    
-    if scrollView.contentOffset.y < -100 {
-      shouldAddTrackOnDidEndDecelerating = true
-    }
-  }
-  
-  // TODO: get rid of this, remove shouldAddTrackOnDidEndDecelerating entirely
-  
-  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    if shouldAddTrackOnDidEndDecelerating {
+    if currPulledDownRatio >= 1 {
       createTrack()
-      shouldAddTrackOnDidEndDecelerating = false
     }
   }
 }

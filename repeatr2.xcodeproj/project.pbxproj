@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56199C67217BDD1D009B6A7A /* HindMadurai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56199C65217BDD1D009B6A7A /* HindMadurai-Bold.ttf */; };
+		56199C68217BDD1D009B6A7A /* HindMadurai-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56199C66217BDD1D009B6A7A /* HindMadurai-SemiBold.ttf */; };
+		56199C69217BE07C009B6A7A /* HindMadurai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5659F7812155EDB6002FD653 /* HindMadurai-Regular.ttf */; };
 		5657E6FD21545A1D00994A49 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FC21545A1D00994A49 /* Track.swift */; };
 		5657E70021545EDF00994A49 /* LoopRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E6FF21545EDF00994A49 /* LoopRecordView.swift */; };
 		5657E70221545F2100994A49 /* LoopRecordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5657E70121545F2100994A49 /* LoopRecordDelegate.swift */; };
@@ -41,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		0E8E80ACFD8CCE49F5BFC613 /* Pods-repeatr2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-repeatr2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-repeatr2/Pods-repeatr2.debug.xcconfig"; sourceTree = "<group>"; };
+		56199C65217BDD1D009B6A7A /* HindMadurai-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindMadurai-Bold.ttf"; sourceTree = "<group>"; };
+		56199C66217BDD1D009B6A7A /* HindMadurai-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindMadurai-SemiBold.ttf"; sourceTree = "<group>"; };
 		5657E6FC21545A1D00994A49 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		5657E6FF21545EDF00994A49 /* LoopRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordView.swift; sourceTree = "<group>"; };
 		5657E70121545F2100994A49 /* LoopRecordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopRecordDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				5659F7812155EDB6002FD653 /* HindMadurai-Regular.ttf */,
+				56199C65217BDD1D009B6A7A /* HindMadurai-Bold.ttf */,
+				56199C66217BDD1D009B6A7A /* HindMadurai-SemiBold.ttf */,
 				5659F77F2155ED97002FD653 /* HindMadurai-Light.ttf */,
 			);
 			path = Fonts;
@@ -296,8 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56199C67217BDD1D009B6A7A /* HindMadurai-Bold.ttf in Resources */,
 				5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */,
 				5659F7802155ED97002FD653 /* HindMadurai-Light.ttf in Resources */,
+				56199C68217BDD1D009B6A7A /* HindMadurai-SemiBold.ttf in Resources */,
+				56199C69217BE07C009B6A7A /* HindMadurai-Regular.ttf in Resources */,
 				5663F4D5201D135F0061DC86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

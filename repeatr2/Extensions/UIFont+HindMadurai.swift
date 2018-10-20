@@ -10,4 +10,14 @@ extension UIFont {
     guard let font = UIFont(name: "HindMadurai-Regular", size: size) else { fatalError("Couldn't load font") }
     return font
   }
+  
+  class func hindMaduraiSemiBold(ofSize size: CGFloat) -> UIFont {
+    guard let font = UIFont(name: "HindMadurai-SemiBold", size: size) else { fatalError("Couldn't load font") }
+    return font
+  }
+  
+  class func hindMaduraiBold(ofSize size: CGFloat) -> UIFont {
+    guard let font = UIFont(name: "HindMadurai-Bold", size: size) else { fatalError("Couldn't load font") }
+    return font
+  }
 }

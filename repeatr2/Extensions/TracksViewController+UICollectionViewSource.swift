@@ -7,7 +7,7 @@ extension TracksViewController: UICollectionViewDataSource {
     return cell
   }
   
-  func collectionView(_ collectionView: UICollectionView, numb erOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return tracks.count
   }
 }
