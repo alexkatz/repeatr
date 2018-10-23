@@ -3,7 +3,7 @@ import UIKit
 extension TracksViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrackCollectionViewCell.identifier, for: indexPath) as! TrackCollectionViewCell
-    cell.initialize()
+    cell.track = tracks[indexPath.item]
     return cell
   }
   

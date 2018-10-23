@@ -6,6 +6,11 @@ class TracksViewController: UIViewController {
   let addTrackOffsetDelta: CGFloat = 100
   let impactGenerator = UIImpactFeedbackGenerator()
   
+  var editingTracks = false
+  
+  var prevPulledDownRatio: CGFloat = 0
+  var currPulledDownRatio: CGFloat = 0
+  
   var animator: UIViewPropertyAnimator!
   var collectionView: UICollectionView!
   var welcomeLabel: UILabel!
@@ -18,9 +23,7 @@ class TracksViewController: UIViewController {
   var addTrackIndicatorView: UIView!
   
   var tracks = [Track]()
-  
-  var prevPulledDownRatio: CGFloat = 0
-  var currPulledDownRatio: CGFloat = 0
+  var selectedTrack: Track?
   
   var visibleCells: [TrackCollectionViewCell] {
     return collectionView.visibleCells.map({ cell in cell as! TrackCollectionViewCell })
@@ -108,6 +111,7 @@ class TracksViewController: UIViewController {
     welcomeLabel = UILabel(frame: CGRect.zero)
     welcomeLabel.font = UIFont.hindMaduraiLight(ofSize: UIFont.Size.thirteen)
     welcomeLabel.textAlignment = .center
+    welcomeLabel.alpha = 0
     welcomeLabel.textColor = UIColor.Theme.white
     welcomeLabel.text = "Swipe down to create a new track."
     view.addSubview(welcomeLabel)
@@ -140,6 +144,7 @@ class TracksViewController: UIViewController {
     super.viewDidAppear(animated)
     UIView.animate(withDuration: 2) {
       self.bottomContainerView.alpha = 1
+      self.welcomeLabel.alpha = 1
     }
   }
   
@@ -161,13 +166,40 @@ class TracksViewController: UIViewController {
         for cell in self.visibleCells {
           if cell.track == self.tracks.first {
             UIView.animate(withDuration: 0.35, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-//              self.selectCell(cell)
+              self.selectCell(cell)
             }, completion: nil)
             break
           }
         }
       }
     })
+  }
+  
+  func selectCell(_ cell: TrackCollectionViewCell) {
+    if selectedTrack != cell.track {
+      cell.track?.recordDelegate = self.recordView
+      cell.track?.loopRecordDelegate = self.loopRecordView
+      cell.track?.moreView = moreView
+      recordView.track = cell.track
+      loopRecordView.track = cell.track
+      
+      cell.selectedForLoopRecord = true
+      
+      selectedTrack = cell.track
+      
+      for visibleCell in visibleCells {
+        visibleCell.selectedForLoopRecord = visibleCell == cell
+        visibleCell.enabled = true
+        visibleCell.editing = false
+        visibleCell.track?.isArmedForLoopRecord = false
+        loopRecordView.setArmed(false)
+      }
+      
+      editingTracks = false
+      loopRecordView.setArmed(false)
+      loopRecordView.enabled = cell.track?.hasAudio ?? false
+      recordView.enabled = true
+    }
   }
 }
 

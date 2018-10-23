@@ -9,15 +9,15 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
   weak var delegate: LoopRecordViewDelegate?
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    if let trackService = trackService {
-      if trackService.isLoopRecording {
-        trackService.finishLoopRecord()
-        delegate?.dismissActiveLoopRecord()
-      } else if !trackService.isArmedForLoopRecord {
-        trackService.isArmedForLoopRecord = true
-      } else if trackService.isArmedForLoopRecord && !trackService.isLoopRecording {
-        trackService.startLoopRecord()
-      }
+    guard let track = track else { return }
+    
+    if track.isLoopRecording {
+      track.finishLoopRecord()
+      delegate?.dismissActiveLoopRecord()
+    } else if !track.isArmedForLoopRecord {
+      track.isArmedForLoopRecord = true
+    } else if track.isArmedForLoopRecord && !track.isLoopRecording {
+      track.startLoopRecord()
     }
   }
   

@@ -1,7 +1,7 @@
 import UIKit
 
 class BottomControlView: UIView, Disablable {
-  var trackService: Track?
+  weak var track: Track?
   
   var enabled = false {
     didSet {
@@ -20,13 +20,15 @@ class BottomControlView: UIView, Disablable {
   }
 
   func setup() {
-    label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.hindMaduraiLight(ofSize: UIFont.Size.thirteen)
     label.textColor = UIColor.Theme.white
     label.textAlignment = .center
     addSubview(label)
-    label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    label.centerYAnchor.constraint(equalTo: layoutMarginsGuide.centerYAnchor).isActive = true
+    label.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalTo(layoutMarginsGuide.snp.centerY)
+    }
+    
     enabled = false
   }
 }

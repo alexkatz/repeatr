@@ -8,11 +8,11 @@ class RecordView: BottomControlView, RecordDelegate {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.trackService?.recordAudio()
+    self.track?.recordAudio()
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.trackService?.stopAudio()
+    self.track?.stopAudio()
   }
   
   override func setup() {

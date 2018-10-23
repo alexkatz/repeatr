@@ -3,7 +3,7 @@ import UIKit
 extension TracksViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if let cell = collectionView.cellForItem(at: indexPath) as? TrackCollectionViewCell {
-      //      self.selectCell(cell)
+      selectCell(cell)
     }
   }
   

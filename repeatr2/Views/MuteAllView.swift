@@ -1,7 +1,7 @@
 import UIKit
 
 class MuteAllView: BottomControlView {
-  let loopService = Looper.sharedInstance
+  let loopService = OldLooper.sharedInstance
   let muteAllText = "MUTE ALL"
   let unmuteAllText = "UNMUTE ALL"
   
@@ -11,7 +11,7 @@ class MuteAllView: BottomControlView {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    loopService.setAllTracksMuted(!loopService.areAllTracksMuted)
+    loopService.areAllTracksMuted = !loopService.areAllTracksMuted
     label.text = loopService.areAllTracksMuted ? unmuteAllText : muteAllText
   }
 }
