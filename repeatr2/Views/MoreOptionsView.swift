@@ -1,6 +1,6 @@
 import UIKit
 
-class MoreOptionsView: BottomControlView {  
+class MoreOptionsView: BottomControlView, MoreOptionsDelegate {
   weak var trackSelectorDelegate: TrackSelectorDelegate?
   
   override func setup() {

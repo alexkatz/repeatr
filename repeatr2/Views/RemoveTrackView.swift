@@ -4,6 +4,7 @@ class RemoveTrackView : BottomControlView {
   var touch: UITouch?
   
   override func setup() {
+    super.setup()
     label.text = "REMOVE"
   }
   

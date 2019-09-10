@@ -23,6 +23,8 @@ class TrackCollectionViewCell: UICollectionViewCell, AudioVolumeDelegate, Playba
       waveformView?.bookmarkColor = UIColor.Theme.white.withAlphaComponent(Constants.dimAlpha)
       waveformView?.bookmarkBaseColor = UIColor.Theme.white.withAlphaComponent(0.0)
       
+      if trackControlsView == nil { addTrackControlsView() }
+      
       volumeControlView.delegate = self
       volumeControlView.volumeLevel = volumeLevel ?? 0
       
@@ -53,8 +55,6 @@ class TrackCollectionViewCell: UICollectionViewCell, AudioVolumeDelegate, Playba
       if let track = track {
         volumeControlView.volumeLevel = track.volumeLevel
         if editing {
-          playbackView.track = track
-          removeTrackView.track = track
           track.loopPlaybackDelegate = playbackView
           bringSubviewToFront(trackControlsView)
         }
@@ -71,48 +71,30 @@ class TrackCollectionViewCell: UICollectionViewCell, AudioVolumeDelegate, Playba
     set { track?.volumeLevel = newValue ?? 0 }
   }
   
-  lazy var removeTrackView: RemoveTrackView = {
-    let removeTrackView = RemoveTrackView()
-    trackControlsView.addSubview(removeTrackView)
-    removeTrackView.snp.makeConstraints { make in
-      make.height.equalTo(Constants.bottomButtonsHeight)
-      make.width.equalToSuperview().multipliedBy(0.25)
-      make.leading.equalTo(playbackView.snp.trailing)
-      make.bottom.equalToSuperview()
-    }
-
-    removeTrackView.track = track
-    
-    return removeTrackView
-  }()
+  var removeTrackView: RemoveTrackView!
+  var trackControlsView: UIView!
+  var volumeControlView: VolumeControlView!
+  var playbackView: LoopPlaybackView!
   
-  lazy var trackControlsView: UIView = {
-    let view = UIView()
-    addSubview(view)
-    view.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
-    }
-
-    view.alpha = 0
-    
-    return view
-  }()
-  
-  lazy var volumeControlView: VolumeControlView = {
-    let volumeView = VolumeControlView(bottomMargin: 3)
-    trackControlsView.addSubview(volumeView)
-    volumeView.snp.makeConstraints { make in
+  func addTrackControlsView() {
+    trackControlsView = UIView()
+    addSubview(trackControlsView)
+    trackControlsView.alpha = 0
+    trackControlsView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
     
-    volumeView.backgroundColor = UIColor.Theme.white.withAlphaComponent(0)
-    volumeView.fillColor = UIColor.Theme.white.withAlphaComponent(Constants.dimAlpha)
-    volumeView.centerLabelText = nil
-    return volumeView
-  }()
-  
-  lazy var playbackView: LoopPlaybackView = {
-    let playbackView = LoopPlaybackView()
+    volumeControlView = VolumeControlView(bottomMargin: 3)
+    trackControlsView.addSubview(volumeControlView)
+    volumeControlView.backgroundColor = UIColor.Theme.white.withAlphaComponent(0)
+    volumeControlView.fillColor = UIColor.Theme.white.withAlphaComponent(Constants.dimAlpha)
+    volumeControlView.centerLabelText = nil
+    volumeControlView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    
+    playbackView = LoopPlaybackView(bottomMargin: 0)
+    playbackView.enabled = true
     trackControlsView.addSubview(playbackView)
     playbackView.snp.makeConstraints { make in
       make.width.equalToSuperview().multipliedBy(0.25)
@@ -124,10 +106,22 @@ class TrackCollectionViewCell: UICollectionViewCell, AudioVolumeDelegate, Playba
     playbackView.enabled = true
     playbackView.visualDelegate = self
     
-    return playbackView
-  }()
+    removeTrackView = RemoveTrackView(bottomMargin: 0)
+    removeTrackView.enabled = true
+    trackControlsView.addSubview(removeTrackView)
+    removeTrackView.snp.makeConstraints { make in
+      make.height.equalTo(Constants.bottomButtonsHeight)
+      make.width.equalToSuperview().multipliedBy(0.25)
+      make.leading.equalTo(playbackView.snp.trailing)
+      make.bottom.equalToSuperview()
+    }
+    
+    removeTrackView.track = track
+  }
 
   func playbackView(_ playbackView: LoopPlaybackView, isPlayingLoop: Bool) {
-    volumeControlView.fillColor = isPlayingLoop ? UIColor.Theme.green.withAlphaComponent(Constants.dimAlpha) : UIColor.Theme.white.withAlphaComponent(Constants.dimAlpha)
+    volumeControlView.fillColor = isPlayingLoop
+      ? UIColor.Theme.green.withAlphaComponent(Constants.dimAlpha)
+      : UIColor.Theme.white.withAlphaComponent(Constants.dimAlpha)
   }
 }

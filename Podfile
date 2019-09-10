@@ -6,5 +6,5 @@ target 'repeatr2' do
   use_frameworks!
 
   # Pods for repeatr2
-  pod 'SnapKit', '~> 4.0'
+  pod 'SnapKit', '~> 5.0'
 end

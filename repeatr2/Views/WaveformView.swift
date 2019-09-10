@@ -314,7 +314,7 @@ class WaveformView: UIView, PlaybackDelegate, MeterDelegate {
             uncommittedBookmarkView.removeFromSuperview()
           })
           
-          if let index = bookmarkViews.index(of: uncommittedBookmarkView) {
+          if let index = bookmarkViews.firstIndex(of: uncommittedBookmarkView) {
             bookmarkViews.remove(at: index)
           }
         }

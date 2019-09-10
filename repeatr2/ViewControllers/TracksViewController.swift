@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-class TracksViewController: UIViewController {
+class TracksViewController: UIViewController, TrackSelectorDelegate {
   let addTrackOffsetDelta: CGFloat = 100
   let impactGenerator = UIImpactFeedbackGenerator()
   
@@ -86,6 +86,7 @@ class TracksViewController: UIViewController {
     }
     
     moreView = MoreOptionsView(bottomMargin: view.layoutMargins.bottom)
+    moreView.trackSelectorDelegate = self
     bottomContainerView.addSubview(moreView)
     moreView.snp.makeConstraints { make in
       make.size.equalTo(recordView.snp.size)
@@ -142,10 +143,31 @@ class TracksViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+//    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onTrackSelected(_:)), name: NSNotification.Name(rawValue: Constants.notificationTrackSelected), object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onLoopRecordArmed(_:)), name: NSNotification.Name(rawValue: Constants.notificationLoopRecordArmed), object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onDestroyTrack(_:)), name: NSNotification.Name(rawValue: Constants.notificationDestroyTrack), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.dismissActiveLoopRecord), name: NSNotification.Name(rawValue: Constants.notificationEndLoopRecord), object: nil)
     UIView.animate(withDuration: 2) {
       self.bottomContainerView.alpha = 1
       self.welcomeLabel.alpha = 1
     }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    NotificationCenter.default.removeObserver(self)
+  }
+  
+  func toggleTrackEditMode() {
+    guard tracks.count > 0 else { return }
+    editingTracks = !editingTracks
+    UIView.animate(
+      withDuration: Constants.defaultAnimationDuration,
+      delay: 0,
+      options: [.allowUserInteraction, .beginFromCurrentState],
+      animations: { self.visibleCells.forEach { $0.editing = self.editingTracks }},
+      completion: nil
+    )
   }
   
   func handleError(errorMessage: String, description: String? = nil) {
@@ -165,9 +187,13 @@ class TracksViewController: UIViewController {
       if finished {
         for cell in self.visibleCells {
           if cell.track == self.tracks.first {
-            UIView.animate(withDuration: 0.35, delay: 0, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-              self.selectCell(cell)
-            }, completion: nil)
+            UIView.animate(
+              withDuration: Constants.defaultAnimationDuration,
+              delay: 0,
+              options: [.allowUserInteraction, .beginFromCurrentState],
+              animations: { self.selectCell(cell) },
+              completion: nil
+            )
             break
           }
         }

@@ -63,7 +63,7 @@ class OldLooper {
       self.pauseLoopPlayback()
     }
     
-    if let index = self.activeTrackServices.index(of: trackService) {
+    if let index = self.activeTrackServices.firstIndex(of: trackService) {
       self.activeTrackServices.remove(at: index)
     }
     
@@ -88,7 +88,7 @@ class OldLooper {
             let intervalFromStart = mach_absolute_time() - currentLoopStartTime // get interval from start for this iteration of the while loop
             if  intervalFromStart >= loopPoint.intervalFromStart { // as soon as interval from start is reached on the next loop in line, it's time to affect playback!
               if let audioTime = loopPoint.audioTime { // if nil, pause rather than play
-                if self.audioPlayersPendingRemoval.index(of: loopPoint.audioPlayer) == nil { // if loop point is pending removal, ignore it
+                if self.audioPlayersPendingRemoval.firstIndex(of: loopPoint.audioPlayer) == nil { // if loop point is pending removal, ignore it
                   loopPoint.audioPlayer.currentTime = audioTime
                   loopPoint.audioPlayer.play()
                 } else { // if loop point is pending removal, pause it whether it is playing audio or not

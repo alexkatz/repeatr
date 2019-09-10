@@ -147,7 +147,7 @@ class Track: NSObject {
       meterTimer = nil
       meterDelegate?.dbLevel = nil
       moreView?.enabled = true
-    } else if let audioPlayer = audioPlayer , audioPlayer.isPlaying {
+    } else if let audioPlayer = audioPlayer, audioPlayer.isPlaying {
       if isLoopRecording {
         loopPoints.append(LoopPoint(
           intervalFromStart: mach_absolute_time() - loopStartTime,
@@ -280,5 +280,15 @@ class Track: NSObject {
 
 
 extension Track: AVAudioRecorderDelegate {
-  
+  func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+    guard flag else { return }
+    playbackDelegate?.audioURL = recorder.url
+    loopRecordDelegate?.enabled = true
+    do {
+      try audioPlayer = AVAudioPlayer(contentsOf: audioRecorder.url)
+      audioPlayer?.prepareToPlay()
+    } catch let error as NSError {
+      print("Error setting audio player URL: \(error.localizedDescription)")
+    }
+  }
 }

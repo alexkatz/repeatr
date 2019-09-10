@@ -38,6 +38,7 @@
 		5663F4D8201D135F0061DC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5663F4D6201D135F0061DC86 /* LaunchScreen.storyboard */; };
 		566A7FCF202151640027ABC1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A7FCE202151640027ABC1 /* Error.swift */; };
 		566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F5C8F21508AA900B40EE9 /* LoopPoint.swift */; };
+		569B6969231EFCC6001100EB /* MoreOptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B6968231EFCC6001100EB /* MoreOptionsDelegate.swift */; };
 		56CF8E6F217CB82100D4F766 /* AudioVolumeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CF8E6E217CB82100D4F766 /* AudioVolumeDelegate.swift */; };
 		56CF8E71217CB9AB00D4F766 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CF8E70217CB9AB00D4F766 /* WaveformView.swift */; };
 		56CF8E73217CB9F500D4F766 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CF8E72217CB9F500D4F766 /* BookmarkView.swift */; };
@@ -89,6 +90,7 @@
 		5663F4D9201D135F0061DC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566A7FCE202151640027ABC1 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		566F5C8F21508AA900B40EE9 /* LoopPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopPoint.swift; sourceTree = "<group>"; };
+		569B6968231EFCC6001100EB /* MoreOptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsDelegate.swift; sourceTree = "<group>"; };
 		56CF8E6E217CB82100D4F766 /* AudioVolumeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVolumeDelegate.swift; sourceTree = "<group>"; };
 		56CF8E70217CB9AB00D4F766 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		56CF8E72217CB9F500D4F766 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				56F4B5A02151CD0C002148A4 /* Disablable.swift */,
 				5657E70121545F2100994A49 /* LoopRecordDelegate.swift */,
 				5657E71821549E5A00994A49 /* LoopRecordViewDelegate.swift */,
+				569B6968231EFCC6001100EB /* MoreOptionsDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 				TargetAttributes = {
 					5663F4C9201D135F0061DC86 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -413,6 +416,7 @@
 				56F4B5A92151CDEB002148A4 /* RecordView.swift in Sources */,
 				56199C6B217BEE35009B6A7A /* PlaybackDelegate.swift in Sources */,
 				5657E70A2154689800994A49 /* TrackSelectorDelegate.swift in Sources */,
+				569B6969231EFCC6001100EB /* MoreOptionsDelegate.swift in Sources */,
 				566F5C9021508AA900B40EE9 /* LoopPoint.swift in Sources */,
 				56CF8E71217CB9AB00D4F766 /* WaveformView.swift in Sources */,
 				5657E71521549C4200994A49 /* TracksCollectionViewLayout.swift in Sources */,
@@ -568,10 +572,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2RCP32D2;
 				INFOPLIST_FILE = repeatr2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alexkatz.repeatr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -584,10 +589,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2RCP32D2;
 				INFOPLIST_FILE = repeatr2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.alexkatz.repeatr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,0 +1,3 @@
+protocol MoreOptionsDelegate: class {
+  
+}

@@ -6,14 +6,13 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
   var isLabelWhite = true
   var armedTimer: Timer?
   
-  weak var delegate: LoopRecordViewDelegate?
+  weak var loopRecordViewDelegate: LoopRecordViewDelegate?
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let track = track else { return }
-    
     if track.isLoopRecording {
       track.finishLoopRecord()
-      delegate?.dismissActiveLoopRecord()
+      loopRecordViewDelegate?.dismissActiveLoopRecord()
     } else if !track.isArmedForLoopRecord {
       track.isArmedForLoopRecord = true
     } else if track.isArmedForLoopRecord && !track.isLoopRecording {
@@ -25,11 +24,6 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
     super.setup()
     label.text = loopText
     backgroundColor = UIColor.Theme.red
-  }
-  
-  @objc func toggleRed() {
-    isLabelWhite = !isLabelWhite
-    label.textColor = isLabelWhite ? UIColor.Theme.white : UIColor.Theme.black
   }
   
   func didChangeIsArmed(_ isArmed: Bool) {
@@ -55,7 +49,10 @@ class LoopRecordView: BottomControlView, LoopRecordDelegate {
       backgroundColor = UIColor.Theme.red
       isLabelWhite = false
       let interval = 0.35
-      armedTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(LoopRecordView.toggleRed), userInfo: nil, repeats: true)
+      armedTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+        self.isLabelWhite = !self.isLabelWhite
+        self.label.textColor = self.isLabelWhite ? UIColor.Theme.white : UIColor.Theme.black
+      }
       armedTimer?.tolerance = interval * 0.10
     } else {
       armedTimer?.invalidate()
