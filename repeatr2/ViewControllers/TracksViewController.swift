@@ -11,6 +11,8 @@ class TracksViewController: UIViewController, TrackSelectorDelegate {
   var prevPulledDownRatio: CGFloat = 0
   var currPulledDownRatio: CGFloat = 0
   
+  var armedCellY: CGFloat?
+  
   var animator: UIViewPropertyAnimator!
   var collectionView: UICollectionView!
   var welcomeLabel: UILabel!
@@ -145,7 +147,7 @@ class TracksViewController: UIViewController, TrackSelectorDelegate {
     super.viewDidAppear(animated)
 //    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onTrackSelected(_:)), name: NSNotification.Name(rawValue: Constants.notificationTrackSelected), object: nil)
 //    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onLoopRecordArmed(_:)), name: NSNotification.Name(rawValue: Constants.notificationLoopRecordArmed), object: nil)
-//    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onDestroyTrack(_:)), name: NSNotification.Name(rawValue: Constants.notificationDestroyTrack), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.onDestroyTrack(_:)), name: NSNotification.Name(rawValue: Constants.notificationDestroyTrack), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(TracksViewController.dismissActiveLoopRecord), name: NSNotification.Name(rawValue: Constants.notificationEndLoopRecord), object: nil)
     UIView.animate(withDuration: 2) {
       self.bottomContainerView.alpha = 1
@@ -199,6 +201,25 @@ class TracksViewController: UIViewController, TrackSelectorDelegate {
         }
       }
     })
+  }
+  
+  @objc func onDestroyTrack(_ notification: Notification) {
+    if let selectedTrackServiceUUID = (notification as NSNotification).userInfo?[Constants.trackServiceUUIDKey] as? String {
+      for cell in visibleCells {
+        if cell.track?.uuid == selectedTrackServiceUUID, let indexPath = collectionView.indexPath(for: cell) {
+          collectionView.performBatchUpdates({
+            if let track = cell.track, let trackIndex = tracks.firstIndex(of: track) {
+              if track.isPlayingLoop {
+                track.removeFromLoopPlayback()
+              }
+              collectionView.deleteItems(at: [indexPath])
+              tracks.remove(at: trackIndex)
+            }
+          }, completion: nil)
+          break
+        }
+      }
+    }
   }
   
   func selectCell(_ cell: TrackCollectionViewCell) {
